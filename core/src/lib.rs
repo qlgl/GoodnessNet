@@ -1,11 +1,12 @@
-pub mod networks;
-
 pub mod prelude {
-  pub use {
-    ndarray::{Array1, Array2, Axis},
-    rand::prelude::*,
-    rand_distr::Normal,
+  pub use burn::{
+    nn::{
+      Dropout, DropoutConfig, Linear, LinearConfig, Relu,
+      conv::{Conv2d, Conv2dConfig},
+      pool::{AdaptiveAvgPool2d, AdaptiveAvgPool2dConfig},
+    },
+    prelude::*,
   };
 }
 
-pub mod model;
+pub mod deeplearning;
