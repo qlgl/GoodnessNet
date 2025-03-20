@@ -1,15 +1,4 @@
-use crate::prelude::*;
-
-#[derive(Module, Debug)]
-pub struct Model<B: Backend> {
-  conv1:      Conv2d<B>,
-  conv2:      Conv2d<B>,
-  pool:       AdaptiveAvgPool2d,
-  dropout:    Dropout,
-  linear1:    Linear<B>,
-  linear2:    Linear<B>,
-  activation: Relu,
-}
+use {super::Model, crate::prelude::*};
 
 #[derive(Config, Debug)]
 pub struct ModelConfig {
@@ -25,7 +14,7 @@ impl ModelConfig {
     Model {
       conv1:      Conv2dConfig::new([1, 8], [3, 3]).init(device),
       conv2:      Conv2dConfig::new([8, 16], [3, 3]).init(device),
-      pool:       AdaptiveAvgPool2dConfig::new([8, 8]).init(),
+      pool:       nn::pool::AvgPool2dConfig::new([8, 8]).init(),
       activation: Relu::new(),
       linear1:    LinearConfig::new(16 * 8 * 8, self.hidden_size).init(device),
       linear2:    LinearConfig::new(self.hidden_size, self.num_classes)
@@ -34,3 +23,8 @@ impl ModelConfig {
     }
   }
 }
+
+/*
+ * 모델의, 초기화 및 설정을 구성함
+ * 모델은, models/mod.rs 에 구성되어있으며, 여기서는 모델의 설정을 구성함
+ */

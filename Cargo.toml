@@ -98,7 +98,7 @@ name = "fast_forward-WORKSPACE"
 homepage = "https://ql.gl"
 license = "Apache-2.0"
 edition = "2024"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["KuuwangE <root.ql.gl>"]
 description = "A simple and fast framework for building high-performance, high-concurrency, and high-availability services."
 documentation = "Docs."
@@ -198,7 +198,7 @@ serde_with = { version = "*", default-features = false }
 serde_yaml = "*"
 serial_test = "*"
 
-burn = { version = "0.16.0", features = ["wgpu", "train", "accelerate", "candle", "fusion"] }
+burn = { version = "0.16.0", features = ["wgpu", "train", "accelerate", "candle", "fusion", "vision"] }
 bincode = "=2.0.0-rc.3"
 bincode_derive = "=2.0.0-rc.3"
 

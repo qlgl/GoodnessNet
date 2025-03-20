@@ -1,18 +1,31 @@
 use {
-  burn::{backend::{ Wgpu, Candle }, tensor::Tensor},
-  core::prelude::*,
+  burn::{
+    backend::{Autodiff, Candle},
+    optim::AdamConfig,
+  },
+  core::{
+    deeplearning::{
+      model::configs::ModelConfig, train::configs::TrainingConfig,
+    },
+    prelude::*,
+  },
 };
 
 type Backend = Candle;
 
 fn main() {
-  let device = Default::default();
-  // Creation of two tensors, the first with explicit values and the second one
-  // with ones, with the same shape as the first
-  let tensor_1 = Tensor::<Backend, 2>::from_data([[2., 3.], [4., 5.]], &device);
-  let tensor_2 = Tensor::<Backend, 2>::ones_like(&tensor_1);
+  type MyBackend = Candle<f32, u32>;
+  type MyAutoDiffBackend = Autodiff<MyBackend>;
 
-  // Print the element-wise addition (done with the WGPU backend) of the two
-  // tensors.
-  println!("{}", tensor_1 + tensor_2);
+  let device = Default::default();
+  let model = ModelConfig::new(10, 128).init::<MyBackend>(&device);
+
+  let artifact_dir = "/tmp/guide";
+  core::deeplearning::train::train::<MyAutoDiffBackend>(
+    artifact_dir,
+    TrainingConfig::new(ModelConfig::new(10, 512), AdamConfig::new()),
+    device.clone(),
+  );
+
+  println!("{:?}", model);
 }

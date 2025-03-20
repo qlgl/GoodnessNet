@@ -10,3 +10,5 @@ pub mod prelude {
 }
 
 pub mod deeplearning;
+
+pub mod forwardforward;
