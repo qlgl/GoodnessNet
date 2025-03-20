@@ -915,7 +915,7 @@ checksum = "6245d59a3e82a7fc217c5828a6692dbc6dfb63a0c8c90495621f7b9d79704a0e"
 
 [[package]]
 name = "core"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "bincode",
  "bincode_derive",
@@ -1575,7 +1575,7 @@ dependencies = [
 
 [[package]]
 name = "exec"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "build_cfg",
  "log",
@@ -4489,7 +4489,7 @@ dependencies = [
 
 [[package]]
 name = "shared"
-version = "0.1.1"
+version = "0.2.0"
 
 [[package]]
 name = "shlex"

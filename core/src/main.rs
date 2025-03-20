@@ -1,6 +1,6 @@
 use {
   burn::{
-    backend::{Autodiff, Candle},
+    backend::{Autodiff, Candle, candle::CandleDevice},
     optim::AdamConfig,
   },
   core::{
@@ -17,7 +17,8 @@ fn main() {
   type MyBackend = Candle<f32, u32>;
   type MyAutoDiffBackend = Autodiff<MyBackend>;
 
-  let device = Default::default();
+  // let device = Default::default();
+  let device: CandleDevice = CandleDevice::metal(0);
   let model = ModelConfig::new(10, 128).init::<MyBackend>(&device);
 
   let artifact_dir = "/tmp/guide";
