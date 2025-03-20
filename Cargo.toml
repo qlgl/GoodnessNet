@@ -97,7 +97,7 @@ exclude = []
 name = "fast_forward-WORKSPACE"
 homepage = "https://ql.gl"
 license = "Apache-2.0"
-edition = "2021"
+edition = "2024"
 version = "0.1.0"
 authors = ["KuuwangE <root.ql.gl>"]
 description = "A simple and fast framework for building high-performance, high-concurrency, and high-availability services."
@@ -107,9 +107,10 @@ repository = "REPO"
 
 [workspace.dependencies]
 
-fast_forward-core = { path = "core", name = "fast_forward-core" }
-fast_forward-shared = { path = "library/shared", name = "fast_forward-shared" }
-fast_forward-exec = { path = "program/exec", name = "fast_forward-exec" }
+core = { path = "core", name = "core" }
+shared = { path = "library/shared", name = "shared" }
+exec = { path = "program/exec", name = "exec" }
+
 
 # NOTE : LOGGING
 log = "*"
@@ -118,7 +119,6 @@ log4rs = { version = "*" }
 
 # NOTE : BUILD DEPS
 build_cfg = { version = "*" }
-prefer-dynamic = { version = "*", features = ["link-test"] }
 rustc_version = "*"
 # cc = "*"
 # cargo_metadata = "*"
@@ -190,10 +190,10 @@ rustc_version = "*"
 
 # NOTE : JSON
 
-# serde = "*"
-# serde_bytes = "*"
-# serde_derive = "*"
-# serde_json = "*"
-# serde_with = { version = "*", default-features = false }
-# serde_yaml = "*"
-# serial_test = "*"
+serde = "*"
+serde_bytes = "*"
+serde_derive = "*"
+serde_json = "*"
+serde_with = { version = "*", default-features = false }
+serde_yaml = "*"
+serial_test = "*"

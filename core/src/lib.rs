@@ -7,3 +7,5 @@ pub mod prelude {
     rand_distr::Normal,
   };
 }
+
+pub mod model;

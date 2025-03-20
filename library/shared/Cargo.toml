@@ -1,5 +1,5 @@
 [package]
-name = "fast_forward-shared"
+name = "shared"
 description = "DESCRIPTION"
 documentation = "DOCUMENTATION"
 readme = "README"

@@ -1,5 +1,5 @@
 [package]
-name = "fast_forward-exec"
+name = "exec"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
@@ -14,18 +14,14 @@ path = "src/main.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
-prefer-dynamic.workspace = true
 log.workspace = true
 
 
 
 
-[dev-dependencies]
-prefer-dynamic.workspace = true
 
 
 [build-dependencies]
-prefer-dynamic.workspace = true
 build_cfg.workspace = true
 
 
