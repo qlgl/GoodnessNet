@@ -25,11 +25,11 @@ colour.workspace = true
 log4rs = "*"
 shared.workspace = true
 
-burn = { version = "0.16.0", features = ["wgpu", "train", "accelerate", "candle", "fusion"] }
-bincode = "=2.0.0-rc.3"
-bincode_derive = "=2.0.0-rc.3"
 
-# burn.workspace = true
+burn.workspace = true
+bincode.workspace = true
+bincode_derive.workspace = true
+
 serde.workspace = true
 
 rayon = "*"
