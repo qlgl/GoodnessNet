@@ -1,10 +1,9 @@
-use {crate::prelude::*, burn::nn::pool::AvgPool2d};
+use crate::prelude::*;
 
 #[derive(Module, Debug)]
 pub struct Model<B: Backend> {
   conv1:      Conv2d<B>,
   conv2:      Conv2d<B>,
-  pool:       AvgPool2d,
   dropout:    Dropout,
   linear1:    Linear<B>,
   linear2:    Linear<B>,
@@ -27,8 +26,14 @@ impl<B: Backend> Model<B> {
     let x = self.dropout.forward(x);
     let x = self.activation.forward(x);
 
-    let x = self.pool.forward(x); // [batch_size, 16, 8, 8]
-    let x = x.reshape([batch_size, 16 * 8 * 8]);
+    // avg_pool2d 를 코드로 구현
+    // reshape는 단순하게 형태를 바꾸는 연산이라 크기를 줄일수없음
+    let x = x
+      .reshape([batch_size, 9,1024])
+      .mean_dim(1)
+      .reshape([batch_size, 1024]);
+
+
     let x = self.linear1.forward(x);
     let x = self.dropout.forward(x);
     let x = self.activation.forward(x);
@@ -40,6 +45,6 @@ impl<B: Backend> Model<B> {
 /*
  * 모델에 대하여 준비하는 부분임
  * init 함수를 통해, 모델이 초기화됨
- */
+*/
 
 pub mod configs;

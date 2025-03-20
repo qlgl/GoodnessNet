@@ -3,7 +3,7 @@ pub mod prelude {
     nn::{
       Dropout, DropoutConfig, Linear, LinearConfig, Relu,
       conv::{Conv2d, Conv2dConfig},
-      pool::{AdaptiveAvgPool2d, AdaptiveAvgPool2dConfig},
+      pool::{AdaptiveAvgPool2d, AdaptiveAvgPool2dConfig, AvgPool2d, AvgPool2dConfig},
     },
     prelude::*,
   };
