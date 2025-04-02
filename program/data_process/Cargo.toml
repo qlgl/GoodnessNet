@@ -1,0 +1,28 @@
+[package]
+name = "data_process"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+description.workspace = true
+documentation.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "data_process"
+path = "src/main.rs"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+log.workspace = true
+
+
+
+
+
+
+[build-dependencies]
+build_cfg.workspace = true
+
+
+

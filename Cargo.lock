@@ -915,7 +915,7 @@ checksum = "6245d59a3e82a7fc217c5828a6692dbc6dfb63a0c8c90495621f7b9d79704a0e"
 
 [[package]]
 name = "core"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "bincode",
  "bincode_derive",
@@ -1334,6 +1334,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "575f75dfd25738df5b91b8e43e14d44bda14637a58fae779fd2b064f8bf3e010"
 
 [[package]]
+name = "data_process"
+version = "0.2.1"
+dependencies = [
+ "build_cfg",
+ "log",
+]
+
+[[package]]
 name = "deranged"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1575,7 +1583,7 @@ dependencies = [
 
 [[package]]
 name = "exec"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "build_cfg",
  "log",
@@ -4489,7 +4497,7 @@ dependencies = [
 
 [[package]]
 name = "shared"
-version = "0.2.0"
+version = "0.2.1"
 
 [[package]]
 name = "shlex"

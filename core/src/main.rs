@@ -14,6 +14,9 @@ use {
 type Backend = Candle;
 
 fn main() {
+  let log4rs_config_path = std::path::Path::new("./log4rs.yml");
+  log4rs::init_file(log4rs_config_path, Default::default()).unwrap();
+
   type MyBackend = Candle<f32, u32>;
   type MyAutoDiffBackend = Autodiff<MyBackend>;
 
