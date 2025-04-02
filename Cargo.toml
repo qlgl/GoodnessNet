@@ -89,7 +89,7 @@ members = [
   "program/exec",
 ]
 
-default-members = ["core"]
+# default-members = ["core"]
 
 exclude = []
 
